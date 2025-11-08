@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+void SISTEMA(double A, double B, double C, double D, double E, double F, double &X, double &Y) {
+    double det = A * E - B * D;
+    if (det == 0) {
+        cout << "No hay solucion unica (determinante = 0)" << endl;
+        return;
+    }
+    X = (B * F - C * E) / det;
+    Y = (C * D - A * F) / det;
+}
+
+int main() {
+    double X, Y;
+    SISTEMA(1, 2, 3, 4, 5, 6, X, Y); // ejemplo: x + 2y + 3 = 0 y 4x + 5y + 6 = 0
+    cout << "Solucion del sistema:" << endl;
+    cout << "X = " << X << endl;
+    cout << "Y = " << Y << endl;
+    return 0;
+}
