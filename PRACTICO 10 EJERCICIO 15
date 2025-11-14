@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<string> alumnos = {"Ana","Luis","Maria","Juan"};
+    vector<int> notas = {85, 92, 78, 90};
+
+    vector<pair<int,string>> v;
+    for(int i=0;i<alumnos.size();i++)
+        v.push_back({notas[i], alumnos[i]});
+
+    sort(v.rbegin(), v.rend()); // orden descendente por nota
+
+    cout << "Tres mejores notas:\n";
+    for(int i=0;i<3;i++)
+        cout << v[i].second << " con nota " << v[i].first << endl;
+}
