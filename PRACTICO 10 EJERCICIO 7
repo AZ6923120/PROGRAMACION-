@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese un numero del 0 al 20: ";
+    cin >> n;
+
+    string texto;
+
+    if (n == 0) texto = "CERO";
+    else if (n == 1) texto = "UNO";
+    else if (n == 2) texto = "DOS";
+    else if (n == 3) texto = "TRES";
+    else if (n == 4) texto = "CUATRO";
+    else if (n == 5) texto = "CINCO";
+    else if (n == 6) texto = "SEIS";
+    else if (n == 7) texto = "SIETE";
+    else if (n == 8) texto = "OCHO";
+    else if (n == 9) texto = "NUEVE";
+    else if (n == 10) texto = "DIEZ";
+    else if (n == 11) texto = "ONCE";
+    else if (n == 12) texto = "DOCE";
+    else if (n == 13) texto = "TRECE";
+    else if (n == 14) texto = "CATORCE";
+    else if (n == 15) texto = "QUINCE";
+    else if (n == 16) texto = "DIECISÉIS";
+    else if (n == 17) texto = "DIECISIETE";
+    else if (n == 18) texto = "DIECIOCHO";
+    else if (n == 19) texto = "DIECINUEVE";
+    else if (n == 20) texto = "VEINTE";
+    else texto = "ERROR: Numero fuera de rango";
+
+    cout << texto;
+    return 0;
