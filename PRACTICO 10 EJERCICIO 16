@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<string> alumnos;
+    vector<int> notas;
+    int opcion;
+
+    do {
+        cout << "\n1) Ingresar alumno y nota\n2) Listar alumnos\n3) Ordenar alfabeticamente\n4) Sacar la mejor nota\n5) Promedio\n6) Salir\nOpcion: ";
+        cin >> opcion;
+
+        if(opcion==1) {
+            string a; int n;
+            cout << "Alumno: "; cin >> a;
+            cout << "Nota: "; cin >> n;
+            alumnos.push_back(a); notas.push_back(n);
+        }
+        else if(opcion==2) {
+            for(int i=0;i<alumnos.size();i++)
+                cout << alumnos[i] << " - " << notas[i] << endl;
+        }
+        else if(opcion==3) {
+            vector<pair<string,int>> v;
+            for(int i=0;i<alumnos.size();i++) v.push_back({alumnos[i],notas[i]});
+            sort(v.begin(), v.end());
+            for(int i=0;i<v.size();i++) cout << v[i].first << " - " << v[i].second << endl;
+        }
+        else if(opcion==4) {
+            int maxN = -1; string a;
+            for(int i=0;i<notas.size();i++)
+                if(notas[i]>maxN){ maxN=notas[i]; a=alumnos[i];}
+            cout << "Mejor nota: " << a << " - " << maxN << endl;
+        }
+        else if(opcion==5) {
+            int suma=0;
+            for(int x : notas) suma+=x;
+            cout << "Promedio: " << (float)suma/notas.size() << endl;
+        }
+
+    } while(opcion!=6);
+}
