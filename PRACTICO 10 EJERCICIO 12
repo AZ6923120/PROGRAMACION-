@@ -1,0 +1,18 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> A = {1,2,2,3,4,3,5};
+    vector<int> B;
+
+    for(int x : A) {
+        bool existe = false;
+        for(int y : B) if(y == x) existe = true;
+        if(!existe) B.push_back(x);
+    }
+
+    cout << "Vector sin duplicados: ";
+    for(int x : B) cout << x << " ";
+    cout << endl;
+}
