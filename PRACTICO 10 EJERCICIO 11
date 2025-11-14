@@ -1,0 +1,16 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> A = {-2, 0, 3, -1, 4};
+    int negativos=0, positivos=0, ceros=0;
+
+    for(int x : A) {
+        if(x < 0) negativos++;
+        else if(x > 0) positivos++;
+        else ceros++;
+    }
+
+    cout << "Negativos: " << negativos << ", Positivos: " << positivos << ", Ceros: " << ceros << endl;
+}
